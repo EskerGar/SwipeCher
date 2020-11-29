@@ -28,8 +28,8 @@ namespace Arrow
         {
             _direction = direction;
             _archerPosition = archerPosition;
-            _spawnVector = new Vector3(_normalizedDirection.x, _normalizedDirection.y);
             FindDirection();
+            _spawnVector = new Vector3(_normalizedDirection.x, _normalizedDirection.y);
             _arrowDirection = Object.Instantiate(arrowDirectionPrefab);
             _arrowDirection.transform.position = _archerPosition + _spawnVector * 2f;
             _arrowDirection.transform.right = _normalizedDirection;
