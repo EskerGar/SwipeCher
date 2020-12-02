@@ -6,11 +6,11 @@ namespace Settings
     public class InputSettings : ScriptableObject
     {
         [SerializeField] private float minDirectionDistance;
-        [SerializeField] private float tapTimeFromClear;
+        [SerializeField] private float maxTapTimeFromClear;
         
 
         public float MinDirectionDistance => minDirectionDistance;
 
-        public float TapTimeFromClear => tapTimeFromClear;
+        public float MaxTapTimeFromClear => maxTapTimeFromClear;
     }
 }

@@ -27,7 +27,7 @@ namespace Components
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if(Time.time - _touchTime >= inputSettings.TapTimeFromClear)
+            if(Time.time - _touchTime <= inputSettings.MaxTapTimeFromClear)
                 shootAreaController.ClearAllAreas();
         }
 

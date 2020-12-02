@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf43db025b04a17915aae60090615a5, type: 3}
   m_Name: InputSettings
   m_EditorClassIdentifier: 
-  nearDistanceToArcher: 2
   minDirectionDistance: 3
-  tapTimeFromClear: 1
+  maxTapTimeFromClear: 0.1
