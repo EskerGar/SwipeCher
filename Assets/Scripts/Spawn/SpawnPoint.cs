@@ -7,7 +7,7 @@ namespace Spawn
     public abstract class SpawnPoint : MonoBehaviour
     {
         [SerializeField] protected GameObject prefab;
-        [SerializeField] private Color color;
+        [Tooltip("Color for gizmos")][SerializeField] private Color color;
 
         public void Spawn(LevelSettings levelSettings)
         {

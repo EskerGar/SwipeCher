@@ -46,10 +46,12 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Update () 
     {
+        // Turn the enemy towards the archer
         if (IsInMeleeRangeOf(_archerPosition)) 
             RotateTowards(_archerPosition);
     }
 
+    // NavMesh settings
     private void Start()
     {
         _navMeshAgent.enabled = true;
@@ -62,6 +64,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var archerHealth = other.gameObject.GetComponent<ArcherHealth>();
+        // Check on archer's exist
         if (archerHealth == null) return;
         _isNearArcher = true;
         StartCoroutine(DealingDamage(archerHealth));
@@ -88,6 +91,7 @@ public class EnemyBehaviour : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
     }
 
+    // Damage archer per _attackDelay when near 
     private IEnumerator DealingDamage(HealthComponent archerHealth)
     {
         while (_isNearArcher && archerHealth != null)

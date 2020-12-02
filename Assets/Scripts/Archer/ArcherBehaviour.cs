@@ -12,7 +12,9 @@ namespace Archer
 
                 private ArcherHealth _playerHealth;
                 private ShootAreaController _shootAreaController;
-
+                
+                //Initialize archers components
+                
                 private void Awake()
                 { 
                         ArcherTransform = transform;

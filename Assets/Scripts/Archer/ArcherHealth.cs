@@ -22,6 +22,8 @@ namespace Archer
             ChangeHealth(_restoreHealthPointsPerSec);
         }
 
+        //Restore health per second
+        
         private IEnumerator Regeneration()
         {
             while (gameObject != null)

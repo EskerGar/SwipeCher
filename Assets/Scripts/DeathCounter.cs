@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+// Static class for tracking all enemies deaths
 public static class DeathCounter
 {
     private static int _counter;

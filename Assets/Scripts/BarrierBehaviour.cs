@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BarrierBehaviour : MonoBehaviour
 {
+    
     private void OnTriggerEnter(Collider other)
     {
         var arrow = other.GetComponent<ArrowBehaviour>();

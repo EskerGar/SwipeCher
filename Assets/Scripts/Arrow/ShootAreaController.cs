@@ -22,6 +22,7 @@ namespace Arrow
     
         public void AddArea(Vector2 direction)
         {
+            // Create new shoot area
             _shootAreas.Add(new DirectShootArea(direction, _archerPosition, arrowDirectionPrefab));
             if(_shootingCoroutine == null)
                 _shootingCoroutine = StartCoroutine(Shooting());
@@ -40,6 +41,7 @@ namespace Arrow
         {
             while (_shootAreas.Count > 0)
             {
+                // Alternately shoot from each area
                 for (var i = 0; i < _shootAreas.Count; i++)
                 {
                     var area = _shootAreas[i];
@@ -47,7 +49,7 @@ namespace Arrow
                     area.SpawnArrow(arrowPrefab);
                 }
             }
-
+        
             _shootingCoroutine = null;
         }
 

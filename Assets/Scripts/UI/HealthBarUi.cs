@@ -8,6 +8,7 @@ namespace UI
         [SerializeField] private Transform bar;
         [SerializeField] private ArcherHealth archerHealth;
 
+        // Scaling size depending on the archer health
         private void SetSize(float sizeNormalized)
         {
             bar.localScale = new Vector3(sizeNormalized, 1f);

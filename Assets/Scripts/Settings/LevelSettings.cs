@@ -5,8 +5,8 @@ namespace Settings
     [CreateAssetMenu(menuName = "Settings/LevelSettings", fileName = "LevelSettings")]
     public class LevelSettings : ScriptableObject
     {
-        [SerializeField] private float archerSpeed;
-        [SerializeField] private float enemySpeed;
+        [Tooltip("Archer move speed")][SerializeField] private float archerSpeed;
+        [Tooltip("Enemy move speed")][SerializeField] private float enemySpeed;
         [SerializeField] private float enemyAttackDelay;
         [SerializeField] private float enemySpawnDelay;
         [SerializeField] private float barriersSpawnDelay;

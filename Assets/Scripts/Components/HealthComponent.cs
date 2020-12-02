@@ -22,10 +22,12 @@ namespace Components
         protected void ChangeHealth(float amount)
         {
             HealthPoints += amount;
+            // Rounding to min and max
             HealthPoints = Mathf.Clamp(HealthPoints, 0, MaxHealthPoints);
             OnChangeHealth?.Invoke(HealthPoints);
             if (HealthPoints != 0) return;
             OnDead?.Invoke();
+            // Check for availability death animation
             if (_animator != null)
                 StartCoroutine(AnimationDeath());
         }
@@ -42,6 +44,7 @@ namespace Components
             Destroy(gameObject);
         }
 
+        // Clear all subscribed methods
         private void OnDestroy()
         {
         

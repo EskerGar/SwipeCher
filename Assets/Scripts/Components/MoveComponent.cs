@@ -17,8 +17,10 @@ namespace Components
         private void Move()
         {
             var direction = transform.up;
+            // Check steering axe
             if (forwardDirect)
                 direction = transform.forward;
+            
             transform.position += direction * (levelSettings.ArcherSpeed * Time.deltaTime);
         }
     }

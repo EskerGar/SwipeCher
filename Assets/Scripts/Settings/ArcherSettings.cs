@@ -5,7 +5,7 @@ namespace Settings
     [CreateAssetMenu(menuName = "Settings/ArcherSettings", fileName = "ArcherSettings")]
     public class ArcherSettings : ScriptableObject
     {
-        [SerializeField] private float healthPoints;
+        [Tooltip("Max archers health points")][SerializeField] private float healthPoints;
         [SerializeField] private float restoreHealthPointsPerSec;
         [SerializeField] private float delayBetweenShot;
 

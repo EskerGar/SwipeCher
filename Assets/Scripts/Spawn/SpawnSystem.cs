@@ -12,6 +12,7 @@ namespace Spawn
                 [SerializeField] private List<BarrierSpawnPoint> barrierSpawnPoints;
                 [SerializeField] private LevelSettings levelSettings;
 
+                // Spawn only for object with SpawnPoint class
                 private IEnumerator SpawnOnRandomSpawnPoint<T>(float delay, IReadOnlyList<T> spawnPoints)
                         where T : SpawnPoint
                 {
@@ -37,8 +38,7 @@ namespace Spawn
                 private void OnDrawGizmos()
                 {
                         Gizmos.color = Color.black;
-                        var position = transform.position;
-                        Gizmos.DrawCube(position, Vector3.one);
+                        Gizmos.DrawCube(transform.position, Vector3.one);
                 } 
         }
 }
