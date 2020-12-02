@@ -5,12 +5,11 @@ using UnityEngine.EventSystems;
 
 namespace Components
 {
-    public class InputComponent : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler, IPointerDownHandler
+    public class InputComponent : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerDownHandler
     {
         [SerializeField] private InputSettings inputSettings;
         [SerializeField] private ShootAreaController shootAreaController;
-    
-        private bool _isNearArcher;
+        
         private Camera _camera;
         private float _touchTime;
 
@@ -18,19 +17,11 @@ namespace Components
         {
         }
 
-        public void OnBeginDrag(PointerEventData eventData)
-        {
-            if (FindDistance(GetTouchPoint(eventData)) <= inputSettings.NearDistanceToArcher)
-                _isNearArcher = true;
-        }
-
         public void OnEndDrag(PointerEventData eventData)
         {
-            if(!_isNearArcher) return;
             var hitPoint = GetTouchPoint(eventData);
             if (FindDistance(hitPoint) < inputSettings.MinDirectionDistance) return;
             shootAreaController.AddArea(hitPoint);
-            _isNearArcher = false;
         }
     
 
