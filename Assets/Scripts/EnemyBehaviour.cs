@@ -29,6 +29,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void WhenDead()
     {
+        _animator.StopPlayback();
         StopAllCoroutines();
     }
 

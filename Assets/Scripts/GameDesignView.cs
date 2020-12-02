@@ -35,11 +35,11 @@ public class GameDesignView : MonoBehaviour
 
     private void Start()
     {
-        delayBetweenShots.transform.parent.GetComponent<InputField>().text = archerSettings.DelayBetweenShot.ToString(CultureInfo.InvariantCulture);
-        archerSpeed.transform.parent.GetComponent<InputField>().text = levelSettings.ArcherSpeed.ToString(CultureInfo.InvariantCulture);
-        enemySpeed.transform.parent.GetComponent<InputField>().text = levelSettings.EnemySpeed.ToString(CultureInfo.InvariantCulture);
-        enemyAttackDelay.transform.parent.GetComponent<InputField>().text = levelSettings.EnemyAttackDelay.ToString(CultureInfo.InvariantCulture);
-        enemySpawnDelay.transform.parent.GetComponent<InputField>().text = levelSettings.EnemySpawnDelay.ToString(CultureInfo.InvariantCulture);
-        barrierSpawnDelay.transform.parent.GetComponent<InputField>().text = levelSettings.BarriersSpawnDelay.ToString(CultureInfo.InvariantCulture);
+        delayBetweenShots.transform.parent.GetComponent<InputField>().text = archerSettings.DelayBetweenShot.ToString(CultureInfo.CurrentCulture);
+        archerSpeed.transform.parent.GetComponent<InputField>().text = levelSettings.ArcherSpeed.ToString(CultureInfo.CurrentCulture);
+        enemySpeed.transform.parent.GetComponent<InputField>().text = levelSettings.EnemySpeed.ToString(CultureInfo.CurrentCulture);
+        enemyAttackDelay.transform.parent.GetComponent<InputField>().text = levelSettings.EnemyAttackDelay.ToString(CultureInfo.CurrentCulture);
+        enemySpawnDelay.transform.parent.GetComponent<InputField>().text = levelSettings.EnemySpawnDelay.ToString(CultureInfo.CurrentCulture);
+        barrierSpawnDelay.transform.parent.GetComponent<InputField>().text = levelSettings.BarriersSpawnDelay.ToString(CultureInfo.CurrentCulture);
     }
 }
