@@ -9,13 +9,14 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float damage;
 
     private const float RotationSpeed = 6f;
-    private const float MeleeRange = 3f;
+    private const float MeleeRange = 2.5f;
     
     private bool _isNearArcher;
     private NavMeshAgent _navMeshAgent;
     private float _attackDelay;
     private Vector3 _archerPosition;
     private HealthComponent _healthComponent;
+    private Animator _animator;
 
     public void Initialize(float attackDelay, float speed)
     {
@@ -28,7 +29,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void WhenDead()
     {
-        _navMeshAgent.speed = 0;
         StopAllCoroutines();
     }
 
@@ -44,21 +44,24 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
 
-    private void Update () 
+    private void Update ()
     {
         // Turn the enemy towards the archer
-        if (IsInMeleeRangeOf(_archerPosition)) 
-            RotateTowards(_archerPosition);
+        if (!IsInMeleeRangeOf(_archerPosition)) return;
+        _navMeshAgent.speed = 0f;
+        RotateTowards(_archerPosition);
+        _navMeshAgent.SetDestination(_archerPosition);
     }
-
-    // NavMesh settings
+    
     private void Start()
     {
+        // NavMesh settings
         _navMeshAgent.enabled = true;
         _navMeshAgent.Warp(transform.position);
         _archerPosition = ArcherBehaviour.ArcherTransform.position;
         _navMeshAgent.SetDestination(_archerPosition);
         _navMeshAgent.updateRotation = true;
+        _animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -96,6 +99,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         while (_isNearArcher && archerHealth != null)
         {
+            _animator.Play("Attack1");
             archerHealth.TakeDamage(damage);
             yield return new WaitForSeconds(_attackDelay);
         }

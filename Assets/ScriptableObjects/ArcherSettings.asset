@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ArcherSettings
   m_EditorClassIdentifier: 
   healthPoints: 100
-  restoreHealthPointsPerSec: 1
-  delayBetweenShot: 1
+  restoreHealthPointsPerSec: 0.5
+  delayBetweenShot: 0.5

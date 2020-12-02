@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4462e0357fe3a74dae97c796fa50353, type: 3}
   m_Name: LevelSettings
   m_EditorClassIdentifier: 
-  archerSpeed: 3
-  enemySpeed: 3
+  archerSpeed: 4
+  enemySpeed: 5
   enemyAttackDelay: 1
-  enemySpawnDelay: 2
+  enemySpawnDelay: 1
   barriersSpawnDelay: 2

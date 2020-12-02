@@ -13,6 +13,10 @@ namespace Settings
 
         public float RestoreHealthPointsPerSec => restoreHealthPointsPerSec;
 
-        public float DelayBetweenShot => delayBetweenShot;
+        public float DelayBetweenShot
+        {
+            get => delayBetweenShot;
+            set => delayBetweenShot = value;
+        }
     }
 }

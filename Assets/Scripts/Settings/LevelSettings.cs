@@ -11,14 +11,34 @@ namespace Settings
         [SerializeField] private float enemySpawnDelay;
         [SerializeField] private float barriersSpawnDelay;
 
-        public float ArcherSpeed => archerSpeed;
+        public float ArcherSpeed
+        {
+            get => archerSpeed;
+            set => archerSpeed = value;
+        }
 
-        public float EnemySpawnDelay => enemySpawnDelay;
+        public float EnemySpawnDelay
+        {
+            get => enemySpawnDelay;
+            set => enemySpawnDelay = value;
+        }
 
-        public float EnemyAttackDelay => enemyAttackDelay;
+        public float EnemyAttackDelay
+        {
+            get => enemyAttackDelay;
+            set => enemyAttackDelay = value;
+        }
 
-        public float BarriersSpawnDelay => barriersSpawnDelay;
+        public float BarriersSpawnDelay
+        {
+            get => barriersSpawnDelay;
+            set => barriersSpawnDelay = value;
+        }
 
-        public float EnemySpeed => enemySpeed;
+        public float EnemySpeed
+        {
+            get => enemySpeed;
+            set => enemySpeed = value;
+        }
     }
 }
